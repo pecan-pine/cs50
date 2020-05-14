@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="../static/styles.css" rel="stylesheet">
+        <title>Lucy's Homepage</title>
+    </head>
+    <body>
+        <div id="sidebar">
+            <h2>Navigation</h2>
+            <a href="/">Home</a><br><br>
+            <a href="pictures">Pictures of Lucy</a><br><br>
+            <a href="hobbies">Hobbies</a><br><br>
+            <a href="diet">Diet</a><br><br>
+            <a href="age">Age</a>
+        </div>
+        <div id="main">
+        {% block main %}
+        {% endblock %}
+        </div>
+        <footer>Created by Cat Enterprises 2020</footer>
+    </div>
+</body>
+</html>

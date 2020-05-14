@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Eat a food
+{% endblock %}
+
+{% block main %}
+<form action="/eat" method="POST">
+    <input type="text" name="food" placeholder="What food did you eat?">
+    <!--<input type="text" name="date" placeholder="(Optional) record date/time">-->
+    <label for="start">(Optional) Date:</label>
+    <input type="date" name="date" value={{ date }}>
+    <label for="appt-time">(Optional) time: </label>
+    <input type="time" name="time" value={{ time }}>
+    <input type="submit" value="Eat">
+    <!-- <div style = "margin-left: 150px">mm/dd/yy hr am/pm</div> -->
+</form>
+{% endblock %}

@@ -1,0 +1,1 @@
+SELECT title FROM movies WHERE year BETWEEN 2018 AND (SELECT MAX(year) FROM movies) ORDER BY title;

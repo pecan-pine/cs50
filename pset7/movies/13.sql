@@ -1,0 +1,1 @@
+SELECT DISTINCT p2.name FROM movies AS m JOIN stars AS s ON m.id = s.movie_id JOIN people AS p ON p.id = s.person_id JOIN stars AS s2 ON s2.movie_id = m.id JOIN people AS p2 ON p2.id = s2.person_id WHERE p.name = "Kevin Bacon" AND p.birth = 1958 AND NOT p2.name = "Kevin Bacon" ORDER BY p2.name;

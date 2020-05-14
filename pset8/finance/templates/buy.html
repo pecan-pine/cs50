@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Buy Stocks
+{% endblock %}
+
+{% block main %}
+<form action="/buy" method="POST">
+    <!--Old symbol input field:  <input type="text" name="symbol" placeholder="Stock Symbol"> -->
+    <!-- new symbol input field suggests some stocks for the user -->
+    <input list="symbols" name="symbol" placeholder="Stock Symbol" />
+    <datalist id="browsers">
+    {% for symbol in example_symbols %}
+      <option value={{ symbol }}>
+    {% endfor %}
+    </datalist>
+    <input type="text" name="shares" placeholder="Shares">
+    <input type="submit" value="buy">
+</form>
+
+{% if symbol %}
+<br>
+<p>Thank you for purchasing {{ shares }} shares of {{ symbol }}. Your current balance is {{ balance }}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Eat a food
+{% endblock %}
+
+{% block main %}
+<form action="/record" method="POST">
+    <select id="feeling" name="feeling" placeholder="How are you feeling?" >
+    <option value="" disabled selected>How are you feeling on a scale of 1 to 10?</option>
+    {% for i in range(10,0,-1) %}
+      <option value={{ i }}>{{ i }}</option>
+    {% endfor %}
+    </select>
+    <label for="start">(Optional) Date:</label>
+    <input type="date" name="date" value={{ date }}>
+    <label for="appt-time">(Optional) time: </label>
+    <input type="time" name="time" value={{ time }}>
+    <input type="submit" value="Record">
+    <!-- <div style = "margin-left: 250px">mm/dd/yy hr am/pm</div>-->
+</form>
+{% endblock %}

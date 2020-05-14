@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Hi there, {{ session["username"] }}!</sub>!</h1>
+{% if suspected_foods_list|length == 0 %}
+Our analysis suggests you have no food sensitivites at this time.
+{% elif suspected_foods_list|length == 1 %}
+    We think you may be sensitive to {{ suspected_foods_list[0] }}.
+{% else %}
+    We think you may be sensitive to the following foods:
+    {% for food in suspected_foods_list %}
+        {% if suspected_foods_list.index(food) == suspected_foods_list|length - 1 %}
+            and {{ food }}.
+        {% else %}
+            {{ food }},
+        {% endif %}
+    {% endfor %}
+{% endif %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Food</th>
+        <th> n<sub>d</sub>(food)</th>
+        <th>d </th>
+        <th>avg feeling</th>
+        <th>(&epsilon; = {{ epsilon }} hours,
+                         d={{ d }} hours)</th>
+    </tr>
+    </thead>
+  {% for food in suspected_foods_dict %}
+    <tr>
+        <td>{{ food["food"] }}</td>
+        <td>{{ food["data"]["nd"] }}</td>
+        <td>{{ food["data"]["d"] }}</td>
+        <td>{{ food["data"]["avg_feeling"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Food Eaten</th>
+    </tr>
+    </thead>
+   {% for food in foods %}
+    <tr>
+        <td>{{ food["date"] }}</td>
+        <td>{{ food["food_item"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

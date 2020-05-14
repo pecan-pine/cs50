@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Configure Fooditivity
+{% endblock %}
+
+{% block main %}
+<form action="/configure" method="POST">
+    <label for="d">Change value of d (in hours)</label>
+    <select id="d" name="d" placeholder="Change value of d" >
+    <!-- <option value="" disabled selected>Change value of d</option>-->
+    {% for i in range(23,d,-1) %}
+        <option value={{ i }}>{{ i }}</option>
+    {% endfor %}
+    <option value={{ d }} selected>{{ d }}</option>
+    {% for i in range(d-1, 0,-1) %}
+      <option value={{ i }}>{{ i }}</option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="Update">
+    <br>
+    <label for="epsilon">Change value of &epsilon; (in hours)</label>
+    <select id="epsilon" name="epsilon" placeholder="Change value of epsilon" >
+    {% for i in range(5,epsilon,-1) %}
+        <option value={{ i }}>{{ i }}</option>
+    {% endfor %}
+    <option value={{ epsilon }} selected>{{ epsilon }}</option>
+    {% for i in range(epsilon-1, 0,-1) %}
+      <option value={{ i }}>{{ i }}</option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

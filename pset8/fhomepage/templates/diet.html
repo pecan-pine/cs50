@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+            <h2>
+                Lucy's Diet
+            </h2>
+            <div id="main-left">
+            <p>Lucy enjoys the following foods: </p>
+            <ul>
+                <li>Special dry food</li>
+                <li>Wet food made into a soup</li>
+                <li>Chips</li>
+                <li>Spider webs</li>
+            </ul>
+            <br><br>
+            <button id="feed">Feed Lucy</button>
+            </div>
+            <div id="main-right">
+            <img src="../static/images/lucy_closeup.jpg" id="hungry_lucy" alt = "lucy">
+            <script>
+                let lucy = document.getElementById("hungry_lucy");
+                let width = lucy.offsetWidth;
+                document.querySelector("#feed").onclick = function() {
+                    width = lucy.offsetWidth;
+                    width= width + 10;
+                    document.querySelector("#hungry_lucy").style.width = width + "px";
+                }
+            </script>
+{% endblock %}

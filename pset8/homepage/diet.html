@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Lucy's Diet</title>
+    </head>
+    <body>
+        <div id="sidebar">
+            <h2>Navigation</h2>
+            <a href="index.html">Home</a><br>
+            <a href="pictures.html">Pictures of Lucy</a><br>
+            <a href="hobbies.html">Hobbies</a><br>
+            <a href="diet.html">Diet</a><br>
+            <a href="age.html">Age</a>
+        </div>
+        <div id="main">
+            <h2>
+                Lucy's Diet
+            </h2>
+            <div id="main-left">
+            <p>Lucy enjoys the following foods: </p>
+            <ul>
+                <li>Special dry food</li>
+                <li>Wet food made into a soup</li>
+                <li>Chips</li>
+                <li>Spider webs</li>
+            </ul>
+            <br><br>
+            <button id="feed">Feed Lucy</button>
+            </div>
+            <div id="main-right">
+            <img src="images/lucy_closeup.jpg" id="hungry_lucy" alt = "lucy">
+            <script>
+                let lucy = document.getElementById("hungry_lucy");
+                let width = lucy.offsetWidth;
+                document.querySelector("#feed").onclick = function() {
+                    width = lucy.offsetWidth;
+                    width= width + 10;
+                    document.querySelector("#hungry_lucy").style.width = width + "px";
+                }
+            </script>
+            </div>
+            <footer>Created by Cat Enterprises 2020</footer>
+        </div>
+</body>
+</html>

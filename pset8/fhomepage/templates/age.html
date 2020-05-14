@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+            <h2>
+                Lucy's Age
+            </h2>
+             Lucy was born on November 18, 2006. Her current age is <span id="age">hello.</span>
+            <script>
+                birth = new Date('2006/11/18 07:06:02');
+                today = new Date();
+                /*milli_age is ms since Jan 1 1970 */
+                let milli_age = new Date(Math.abs(today - birth));
+                document.querySelector("#age").innerHTML = milli_age.getFullYear() - 1970 + " years, "+  milli_age.getMonth() + " months.";
+            </script>
+{% endblock %}

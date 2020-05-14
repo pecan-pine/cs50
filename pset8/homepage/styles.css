@@ -1,0 +1,108 @@
+:root {
+    --sidebar-width: 220px;
+    --carousel-height: 525px;
+    --carousel-width: 400px;
+    --border-width: 5px;
+}
+
+body, html {
+    background-color: rgb(100,100,200);
+    height: 100%;
+}
+
+
+#sidebar {
+    background-color: lightblue;
+    font-size: large;
+    position: fixed;
+    width: var(--sidebar-width);
+    height: 100%;
+    /*padding: 20px;*/
+    border-style: solid;
+    border-width: 0px var(--border-width) 0px 0px;
+}
+
+#sidebar h2 {
+    width: var(--sidebar-width) - var(--border-width);
+    background-color: lightgreen;
+    padding: 20px;
+    border-style: solid;
+    border-width: 0px 0px var(--border-width) 0px;
+}
+
+#main h2 {
+    margin-left: 480px;
+    text-decoration: underline;
+    padding: 20px;
+    padding-bottom: 50px;
+    font-size: xxx-large;
+}
+
+#sidebar a {
+    padding: 10px;
+}
+
+#main {
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    font-size: x-large;
+}
+
+#main-left {
+    float: left;
+}
+
+#main-right {
+    float: right;
+}
+
+#main img {
+    height: auto;
+    width: 300px;
+    margin:auto;
+    margin-right: 50px;
+    border: var(--border-width);
+    border-style: ridge;
+    border-color: darkgray;
+}
+
+#pictures img {
+    height: auto;
+    width: 300px;
+    margin: 0px;
+}
+
+#beside_slideshow {
+    float: left;
+    font-size: large;
+}
+
+#carousel-container{
+    margin-left: 400px;
+    margin-right: 450px;
+    display: inline-block;
+    float: right;
+}
+.carousel-item {
+  height: var(--carousel-height);
+  width: var(--carousel-width);
+  border: solid;
+  border-width: 10px;
+  border-style: ridge;
+  border-color: darkgray;
+}
+
+.carousel-item img {
+    max-height: var(--carousel-height);
+    max-width: var(--carousel-width);
+    height: auto;
+    width: auto;
+}
+
+footer {
+    font-size: small;
+    position: absolute;
+    bottom: 15px;
+    left: 1300px;
+}
+
